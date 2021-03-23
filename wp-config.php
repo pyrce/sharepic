@@ -20,7 +20,8 @@
  * @package WordPress
  */
 if(isset($_ENV[`DATABASE_URL`])) {
-  $db = parse_url($_ENV[`DATABASE_URL`]);
+  $db = parse_url(getenv('DATABASE_URL') ? getenv('DATABASE_URL') : getenv('DATABASE_URL'));
+
   define('DB_NAME', trim($db[`path`],`/`));
   define('DB_USER', $db[`user`]);
   define('DB_PASSWORD', $db[`pass`]);
