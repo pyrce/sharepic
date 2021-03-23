@@ -19,6 +19,16 @@
  *
  * @package WordPress
  */
+if(isset($_ENV[`DATABASE_URL`])) {
+  $db = parse_url($_ENV[`CLEARDB_DATABASE_URL`]);
+  define('DB_NAME', trim($db[`path`],`/`));
+  define('DB_USER', $db[`user`]);
+  define('DB_PASSWORD', $db[`pass`]);
+  define('DB_HOST', $db[`host`]);
+  define('DB_CHARSET', 'utf8');
+  define('DB_COLLATE', '');
+} else {
+  
 
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
 /** Nom de la base de données de WordPress. */
@@ -41,7 +51,7 @@ define( 'DB_CHARSET', 'utf8mb4' );
  * N’y touchez que si vous savez ce que vous faites.
  */
 define( 'DB_COLLATE', '' );
-
+}
 /**#@+
  * Clés uniques d’authentification et salage.
  *
