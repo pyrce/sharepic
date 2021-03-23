@@ -19,13 +19,13 @@
  *
  * @package WordPress
  */
-if(isset($_ENV[`DATABASE_URL`])) {
+if(isset($_ENV['DATABASE_URL'])) {
   $db = parse_url(getenv('DATABASE_URL') ? getenv('DATABASE_URL') : getenv('DATABASE_URL'));
 
-  define('DB_NAME', trim($db[`path`],`/`));
-  define('DB_USER', $db[`user`]);
-  define('DB_PASSWORD', $db[`pass`]);
-  define('DB_HOST', $db[`host`]);
+  define('DB_NAME', trim($db['path'],'/'));
+  define('DB_USER', $db['user']);
+  define('DB_PASSWORD', $db['pass']);
+  define('DB_HOST', $db['host']);
   define('DB_CHARSET', 'utf8');
   define('DB_COLLATE', '');
 } else {
