@@ -22,15 +22,15 @@
 if(isset($_ENV['DATABASE_URL'])) {
   $db = parse_url(getenv('DATABASE_URL') ? getenv('DATABASE_URL') : getenv('DATABASE_URL'));
 
-  define('DB_NAME','ddp5c9rrbakfjh');
-  define('DB_USER','wgnykuntgrxydh');
+  define('DB_NAME', 'ddp5c9rrbakfjh');
+  define('DB_USER', 'wgnykuntgrxydh');
   define('DB_PASSWORD', 'aeda172b8ab8922e9de42c755be3b6756f318ee10de303daff711141eaa1bf2d');
   define('DB_HOST', 'ec2-52-7-115-250.compute-1.amazonaws.com');
   define('DB_CHARSET', 'utf8');
   define('DB_COLLATE', '');
 } else {
   
-  
+
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
 /** Nom de la base de données de WordPress. */
 define( 'DB_NAME', 'sharepic' );
